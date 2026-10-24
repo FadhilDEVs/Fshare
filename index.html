@@ -2,12 +2,12 @@
 <html lang="id">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
   <meta name="theme-color" content="#070b14">
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="apple-mobile-web-app-title" content="Fshare">
-  <title>Fshare - Digital Daily-Recording App</title>
+  <title>Fshare - pencatatan keseharian digital</title>
   
   <!-- PWA Manifest & Icons -->
   <link rel="manifest" href="manifest.json">
@@ -1291,6 +1291,7 @@
       bottom: 0;
       left: 0;
       right: 0;
+      width: 100%;
       min-height: 64px;
       background: rgba(15, 23, 42, 0.88);
       backdrop-filter: blur(28px) saturate(210%);
@@ -1302,13 +1303,13 @@
       justify-content: space-around;
       align-items: center;
       box-shadow: 0 -8px 30px rgba(0, 0, 0, 0.6);
-      position: relative;
     }
 
     /* Glider Indicator for Mobile Bottom Nav */
     .bottom-glider {
       position: absolute;
       top: 6px;
+      left: 0;
       height: 48px;
       background: linear-gradient(135deg, rgba(56, 189, 248, 0.22), rgba(14, 165, 233, 0.32));
       border: 1px solid rgba(56, 189, 248, 0.55);
@@ -1376,12 +1377,22 @@
 
     /* RESPONSIVE DESIGN FOR MOBILE & TABLET */
     @media (max-width: 1023px) {
+      #app-shell {
+        flex-direction: column !important;
+        width: 100% !important;
+        min-width: 100% !important;
+        overflow-x: hidden;
+      }
+
       .sidebar {
         display: none !important;
       }
 
       .main-wrapper {
         margin-left: 0 !important;
+        width: 100% !important;
+        max-width: 100% !important;
+        min-width: 0 !important;
       }
 
       .mobile-brand {
@@ -1394,16 +1405,26 @@
 
       .bottom-nav {
         display: flex !important;
+        position: fixed !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        width: 100% !important;
+        z-index: 100 !important;
       }
 
       .content-area {
-        padding: 18px 16px calc(76px + env(safe-area-inset-bottom)) 16px;
+        padding: 18px 16px calc(80px + env(safe-area-inset-bottom)) 16px;
+        width: 100%;
+        max-width: 100%;
+        box-sizing: border-box;
       }
 
       .topbar {
         padding: 0 16px;
         height: 60px;
         gap: 10px;
+        width: 100%;
       }
 
       .topbar-search {
@@ -1433,18 +1454,21 @@
       .auth-container {
         flex-direction: column;
         max-width: 440px;
+        width: 100%;
         margin: 16px;
+        min-height: auto;
         border-radius: var(--radius-lg);
         background: rgba(15, 23, 42, 0.85);
         box-shadow: 0 20px 50px rgba(0, 0, 0, 0.7);
       }
 
       .auth-art {
-        display: none;
+        display: none !important;
       }
 
       .auth-form-wrap {
         padding: 28px 22px;
+        width: 100%;
       }
 
       .stat-card {
@@ -1655,7 +1679,7 @@
         </div>
         <div class="logo-text">
           <h1>Fshare</h1>
-          <span>Digital Daily-Recording App</span>
+          <span>pencatatan keseharian digital</span>
         </div>
       </div>
 
@@ -2111,7 +2135,7 @@
             <!-- Kartu Versi (Judul & Paragraf Tentang Aplikasi telah dihapus sesuai permintaan user) -->
             <div class="card" style="display: flex; align-items: center; justify-content: center; padding: 24px;">
               <div style="font-size: 13px; color: #94a3b8; font-weight: 700; text-align: center; background: rgba(15, 23, 42, 0.75); padding: 12px 24px; border-radius: var(--radius-full); border: 1px solid var(--glass-border); box-shadow: 0 4px 16px rgba(0, 0, 0, 0.3);">
-                Versi: 1.4 | Mode B (GitHub Pages + Apps Script API)
+                Versi: 1.5 | Mode B (GitHub Pages + Apps Script API)
               </div>
             </div>
           </div>

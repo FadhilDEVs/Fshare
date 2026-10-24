@@ -3,7 +3,7 @@
  * Version: 3.0 (Dark Mode Blue Glassmorphism)
  */
 
-const CACHE_NAME = 'fshare-cache-v3';
+const CACHE_NAME = 'fshare-cache-v4';
 const STATIC_ASSETS = [
   './',
   './index.html',
